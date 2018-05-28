@@ -11,9 +11,9 @@ namespace CareerCloud.Pocos
         public Guid Id { get; set; }
         public Guid Job { get; set; }
         public string Skill { get; set; }
-        public string Skill_Level { get; set; }
+        public string SkillLevel { get; set; }
         public int Importance { get; set; }
-        public byte[] Time_Stamp { get; set; }
+        public byte[] TimeStamp { get; set; }
 
 
     }

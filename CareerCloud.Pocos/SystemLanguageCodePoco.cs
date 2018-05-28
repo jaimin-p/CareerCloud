@@ -10,7 +10,7 @@ namespace CareerCloud.Pocos
     {
         public string LanguageID { get; set; }
         public string Name { get; set; }
-        public string Native_Name { get; set; }
+        public string NativeName { get; set; }
 
 
     }

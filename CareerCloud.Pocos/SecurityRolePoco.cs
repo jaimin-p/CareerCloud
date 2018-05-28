@@ -10,7 +10,7 @@ namespace CareerCloud.Pocos
     {
         public Guid Id { get; set; }
         public string Role { get; set; }
-        public bool Is_Inactive { get; set; }
+        public bool IsInactive { get; set; }
 
     }
 }

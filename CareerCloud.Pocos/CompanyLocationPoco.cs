@@ -10,11 +10,11 @@ namespace CareerCloud.Pocos
     {
         public Guid Id { get; set; }
         public Guid Company { get; set; }
-        public string Country_Code { get; set; }
-        public string State_Province_Code { get; set; }
-        public string Street_Address { get; set; }
-        public string City_Town { get; set; }
-        public string Zip_Postal_Code { get; set; }
-        public byte[] Time_Stamp { get; set; }
+        public string CountryCode { get; set; }
+        public string StateProvinceCode { get; set; }
+        public string StreetAddress { get; set; }
+        public string CityTown { get; set; }
+        public string ZipPostalCode { get; set; }
+        public byte[] TimeStamp { get; set; }
     }
 }

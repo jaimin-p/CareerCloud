@@ -12,7 +12,7 @@ namespace CareerCloud.Pocos
         public Guid Job { get; set; }
         public string Major { get; set; }
         public short Importance { get; set; }
-        public byte[] Time_Stamp { get; set; }
+        public byte[] TimeStamp { get; set; }
 
     }
 

@@ -10,9 +10,9 @@ namespace CareerCloud.Pocos
     {
         public Guid Id { get; set; }
         public Guid Login { get; set; }
-        public string Source_IP { get; set; }
-        public DateTime Logon_Date { get; set; }
-        public bool Is_Succesful { get; set; }
+        public string SourceIP { get; set; }
+        public DateTime LogonDate { get; set; }
+        public bool IsSuccesful { get; set; }
 
     }
 }

@@ -11,16 +11,16 @@ namespace CareerCloud.Pocos
 
         public Guid Id { get; set; }
         public Guid Applicant { get; set; }
-        public string Company_Name { get; set; }
-        public string Country_Code { get; set; }
+        public string CompanyName { get; set; }
+        public string CountryCode { get; set; }
         public string Location { get; set; }
-        public string Job_Title { get; set; }
-        public string Job_Description { get; set; }
-        public short Start_Month { get; set; }
-        public int Start_Year { get; set; }
-        public short End_Month { get; set; }
-        public int End_Year { get; set; }
-        public byte[] Time_Stamp { get; set; }
+        public string JobTitle { get; set; }
+        public string JobDescription { get; set; }
+        public short StartMonth { get; set; }
+        public int StartYear { get; set; }
+        public short EndMonth { get; set; }
+        public int EndYear { get; set; }
+        public byte[] TimeStamp { get; set; }
 
     }
 
