@@ -8,5 +8,9 @@ namespace CareerCloud.Pocos
 {
     class SecurityLoginsRolePoco
     {
+        public Guid Id { get; set; }
+        public Guid Login { get; set; }
+        public Guid Role { get; set; }
+        public byte[] Time_Stamp { get; set; }
     }
 }

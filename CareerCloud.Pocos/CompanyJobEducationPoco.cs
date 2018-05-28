@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace CareerCloud.Pocos
 {
-    class CompanyJobEducationPoco
+    public class CompanyJobEducationPoco
     {
+        public Guid Id { get; set; }
+        public Guid Job { get; set; }
+        public string Major { get; set; }
+        public short Importance { get; set; }
+        public byte[] Time_Stamp { get; set; }
+
     }
+
 }

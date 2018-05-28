@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace CareerCloud.Pocos
 {
-    class ApplicantResumePoco
+    public class ApplicantResumePoco
     {
+        public Guid Id { get; set; }
+        public Guid Applicant { get; set; }
+        public string Resume { get; set; }
+        public DateTime? Last_Updated { get; set; }
+
     }
+
 }
