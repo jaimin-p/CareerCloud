@@ -60,7 +60,6 @@
     <Compile Include="SecurityLoginLogPoco.cs" />
     <Compile Include="SecurityLoginRolePoco.cs" />
     <Compile Include="SecurityRolePoco.cs" />
-    <Compile Include="SysdiagramPoco.cs" />
     <Compile Include="SystemCountryCodePoco.cs" />
     <Compile Include="SystemLanguageCodePoco.cs" />
   </ItemGroup>
