@@ -16,6 +16,8 @@ namespace CareerCloud.Pocos
         public Guid Job { get; set; }
         public string Major { get; set; }
         public short Importance { get; set; }
+
+        [Column("Time_Stamp")]
         public byte[] TimeStamp { get; set; }
 
     }

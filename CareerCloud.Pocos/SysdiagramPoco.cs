@@ -13,7 +13,11 @@ namespace CareerCloud.Pocos
     {
         
         public string name { get; set; }
+
+        [Column("principal_id")]
         public int principalid { get; set; }
+
+        [Column("diagram_id")]
         public int diagramid { get; set; }
         public int? version { get; set; }
         public byte[] definition { get; set; }

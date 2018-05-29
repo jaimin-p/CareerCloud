@@ -14,6 +14,8 @@ namespace CareerCloud.Pocos
         [Key]
         public Guid Id { get; set; }
         public string Role { get; set; }
+
+        [Column("Is_Inactive")]
         public bool IsInactive { get; set; }
 
     }
