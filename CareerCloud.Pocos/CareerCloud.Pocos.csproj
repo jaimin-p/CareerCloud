@@ -63,5 +63,11 @@
     <Compile Include="SystemCountryCodePoco.cs" />
     <Compile Include="SystemLanguageCodePoco.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CareerCloud.ADODataAccessLayer\CareerCloud.ADODataAccessLayer.csproj">
+      <Project>{10795eec-9fb9-4ef5-ad2b-b71b875db738}</Project>
+      <Name>CareerCloud.ADODataAccessLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
