@@ -13,6 +13,8 @@ namespace CareerCloud.ADODataAccessLayer
     {
         public void Add(params ApplicantEducationPoco[] items)
         {
+            SqlConnection _connection = new SqlConnection(_connString);
+
             using (_connection)
             {
                 SqlCommand cmd = new SqlCommand();
@@ -21,7 +23,7 @@ namespace CareerCloud.ADODataAccessLayer
                 foreach(ApplicantEducationPoco poco in items)
                 {
                     cmd.CommandText = @"INSERT INTO [dbo].[Applicant_Educations]
-                                                ([Id]
+                                                   ([Id]
                                                    ,[Applicant]
                                                    ,[Major]
                                                    ,[Certificate_Diploma]
@@ -61,12 +63,12 @@ namespace CareerCloud.ADODataAccessLayer
         public IList<ApplicantEducationPoco> GetAll(params Expression<Func<ApplicantEducationPoco, object>>[] navigationProperties)
         {
             ApplicantEducationPoco[] result_ApplicantEducation = new ApplicantEducationPoco[1000];
-
+            SqlConnection _connection = new SqlConnection(_connString);
             using (_connection)
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = _connection;
-                cmd.CommandText = "select * from Applicant_Educations";
+                cmd.CommandText = "SELECT * from Applicant_Educations";
 
                 _connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -106,6 +108,7 @@ namespace CareerCloud.ADODataAccessLayer
 
         public void Remove(params ApplicantEducationPoco[] items)
         {
+            SqlConnection _connection = new SqlConnection(_connString);
             using (_connection)
             {
                 SqlCommand cmd = new SqlCommand();
@@ -125,6 +128,7 @@ namespace CareerCloud.ADODataAccessLayer
 
         public void Update(params ApplicantEducationPoco[] items)
         {
+            SqlConnection _connection = new SqlConnection(_connString);
             using (_connection)
             {
                 SqlCommand cmd = new SqlCommand();
