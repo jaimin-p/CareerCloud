@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CareerCloud.ADODataAccessLayer
 {
-    public class Class1
+    class ApplicantSkillRepository
     {
     }
 }
