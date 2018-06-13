@@ -15,7 +15,40 @@ namespace CareerCloud.ADODataAccessLayer
         {
             using (_connection)
             {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = _connection;
 
+                foreach(ApplicantEducationPoco poco in items)
+                {
+                    cmd.CommandText = @"INSERT INTO [dbo].[Applicant_Educations]
+                                                ([Id]
+                                                   ,[Applicant]
+                                                   ,[Major]
+                                                   ,[Certificate_Diploma]
+                                                   ,[Start_Date]
+                                                   ,[Completion_Date]
+                                                   ,[Completion_Percent])
+                                             VALUES
+                                                   (@Id
+                                                   ,@Applicant
+                                                   ,@Major
+                                                   ,@Certificate_Diploma
+                                                   ,@Start_Date
+                                                   ,@Completion_Date
+                                                   ,@Completion_Percent)";
+
+                    cmd.Parameters.AddWithValue("@Id", poco.Id);
+                    cmd.Parameters.AddWithValue("@Applicant", poco.Applicant);
+                    cmd.Parameters.AddWithValue("@Major", poco.Major);
+                    cmd.Parameters.AddWithValue("@Certificate_Diploma", poco.CertificateDiploma);
+                    cmd.Parameters.AddWithValue("@Start_Date", poco.StartDate);
+                    cmd.Parameters.AddWithValue("@Completion_Date", poco.CompletionDate);
+                    cmd.Parameters.AddWithValue("@Completion_Percent", poco.CompletionPercent);
+
+                    _connection.Open();
+                    cmd.ExecuteNonQuery();
+                    _connection.Close();
+                }
 
             }
         }
@@ -81,6 +114,7 @@ namespace CareerCloud.ADODataAccessLayer
                 {
                     cmd.CommandText = @"DELETE from Applicant_Educations WHERE ID = @id";
                     cmd.Parameters.AddWithValue("@Id", poco.Id);
+
                     _connection.Open();
                     cmd.ExecuteNonQuery();
                     _connection.Close();
