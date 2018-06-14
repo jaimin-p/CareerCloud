@@ -23,13 +23,11 @@ namespace CareerCloud.ADODataAccessLayer
                 foreach(SystemCountryCodePoco poco in items)
                 {
                     cmd.CommandText = @"INSERT INTO [dbo].[System_Country_Codes]
-                                                        (
-                                                           [Code]
+                                                        (  [Code]
                                                           ,[Name]
                                                         )
                                                         VALUES
-                                                        (
-                                                           @Code
+                                                        ( @Code
                                                           ,@Name
                                                         )";
 
@@ -95,9 +93,9 @@ namespace CareerCloud.ADODataAccessLayer
                 foreach (SystemCountryCodePoco poco in items)
                 {
                     cmd.CommandText = @"DELETE FROM [dbo].[System_Country_Codes]
-                                                      WHERE [Id] = @Id";
+                                                      WHERE [Code] = @Code";
 
-                    cmd.Parameters.AddWithValue("@Id", poco.Id);
+                    cmd.Parameters.AddWithValue("@Code", poco.Code);
 
                     _connection.Open();
                     cmd.ExecuteNonQuery();

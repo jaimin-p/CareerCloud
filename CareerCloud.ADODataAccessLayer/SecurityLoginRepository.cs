@@ -97,19 +97,19 @@ namespace CareerCloud.ADODataAccessLayer
                 while (reader.Read())
                 {
                     SecurityLoginPoco poco = new SecurityLoginPoco();
-                    poco.Id = rdr.GetGuid(0);
-                    poco.Login = rdr.GetString(1);
-                    poco.Password = rdr.GetString(2);
-                    poco.Created = rdr.GetDateTime(3);
-                    poco.PasswordUpdate = rdr.IsDBNull(4) ? null : (DateTime?)rdr.GetDateTime(4);
-                    poco.AgreementAccepted = rdr.IsDBNull(5) ? null : (DateTime?)rdr.GetDateTime(5);
-                    poco.IsLocked = rdr.GetBoolean(6);
-                    poco.IsInactive = rdr.GetBoolean(7);
-                    poco.EmailAddress = rdr.GetString(8);
-                    poco.PhoneNumber = rdr.IsDBNull(9) ? null : rdr.GetString(9);
-                    poco.FullName = rdr.IsDBNull(10) ? null : rdr.GetString(10);
-                    poco.ForceChangePassword = rdr.GetBoolean(11);
-                    poco.PrefferredLanguage = rdr.IsDBNull(12) ? null : rdr.GetString(12);
+                    poco.Id = reader.GetGuid(0);
+                    poco.Login = reader.GetString(1);
+                    poco.Password = reader.GetString(2);
+                    poco.Created = reader.GetDateTime(3);
+                    poco.PasswordUpdate = reader.IsDBNull(4) ? null : (DateTime?)reader.GetDateTime(4);
+                    poco.AgreementAccepted = reader.IsDBNull(5) ? null : (DateTime?)reader.GetDateTime(5);
+                    poco.IsLocked = reader.GetBoolean(6);
+                    poco.IsInactive = reader.GetBoolean(7);
+                    poco.EmailAddress = reader.GetString(8);
+                    poco.PhoneNumber = reader.IsDBNull(9) ? null : reader.GetString(9);
+                    poco.FullName = reader.IsDBNull(10) ? null : reader.GetString(10);
+                    poco.ForceChangePassword = reader.GetBoolean(11);
+                    poco.PrefferredLanguage = reader.IsDBNull(12) ? null : reader.GetString(12);
                     poco.TimeStamp = (byte[])reader["Time_Stamp"];
 
                     result[p] = poco;

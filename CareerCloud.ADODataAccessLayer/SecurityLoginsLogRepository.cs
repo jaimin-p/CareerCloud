@@ -58,7 +58,7 @@ namespace CareerCloud.ADODataAccessLayer
 
         public IList<SecurityLoginsLogPoco> GetAll(params Expression<Func<SecurityLoginsLogPoco, object>>[] navigationProperties)
         {
-            SecurityLoginsLogPoco[] result = new SecurityLoginsLogPoco[1000];
+            SecurityLoginsLogPoco[] result = new SecurityLoginsLogPoco[1800];
             SqlConnection _connection = new SqlConnection(_connString);
             using (_connection)
             {
@@ -72,13 +72,12 @@ namespace CareerCloud.ADODataAccessLayer
                 while (reader.Read())
                 {
                     SecurityLoginsLogPoco poco = new SecurityLoginsLogPoco();
-                    poco.Id = rdr.GetGuid(0);
-                    poco.Login = rdr.GetGuid(1);
-                    poco.SourceIP = rdr.GetString(2);
-                    poco.LogonDate = rdr.GetDateTime(3);
-                    poco.IsSuccesful = rdr.GetBoolean(4);
-                    poco.TimeStamp = (byte[])reader["Time_Stamp"];
-
+                    poco.Id = reader.GetGuid(0);
+                    poco.Login = reader.GetGuid(1);
+                    poco.SourceIP = reader.GetString(2);
+                    poco.LogonDate = reader.GetDateTime(3);
+                    poco.IsSuccesful = reader.GetBoolean(4);
+                    
                     result[p] = poco;
                     p++;
                 }

@@ -81,7 +81,7 @@ namespace CareerCloud.ADODataAccessLayer
                     poco.CompanyWebsite = reader.IsDBNull(2) ? null : reader.GetString(2);
                     poco.ContactPhone = reader.GetString(3);
                     poco.ContactName = reader.IsDBNull(4) ? null : reader.GetString(4);
-                    poco.TimeStamp = (byte[])reader["Company_Logo"];
+                    poco.CompanyLogo = reader.IsDBNull(5) ?null:(byte[])reader["Company_Logo"];
                     poco.TimeStamp = (byte[])reader["Time_Stamp"];
 
                     result[p] = poco;

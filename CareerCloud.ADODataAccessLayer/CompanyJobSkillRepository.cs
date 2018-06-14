@@ -58,7 +58,7 @@ namespace CareerCloud.ADODataAccessLayer
 
         public IList<CompanyJobSkillPoco> GetAll(params Expression<Func<CompanyJobSkillPoco, object>>[] navigationProperties)
         {
-            CompanyJobSkillPoco[] result = new CompanyJobSkillPoco[1000];
+            CompanyJobSkillPoco[] result = new CompanyJobSkillPoco[5100];
             SqlConnection _connection = new SqlConnection(_connString);
             using (_connection)
             {
