@@ -1,4 +1,5 @@
-﻿using CareerCloud.Pocos;
+﻿using CareerCloud.DataAccessLayer;
+using CareerCloud.Pocos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,9 @@ namespace CareerCloud.BusinessLogicLayer
 {
     public class ApplicantEducationLogic :BaseLogic<ApplicantEducationPoco>
     {
-        
+        public ApplicantEducationLogic(IDataRepository<ApplicantEducationPoco> repository) : base(repository)
+        { }
+
+
     }
 }
