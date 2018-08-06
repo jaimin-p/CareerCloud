@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{10795EEC-9FB9-4EF5-AD2B-B71B875DB738}</ProjectGuid>
+    <ProjectGuid>{3C0EB4F1-0359-4AC9-9B88-6337E4F8F2B7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CareerCloud.ADODataAccessLayer</RootNamespace>
-    <AssemblyName>CareerCloud.ADODataAccessLayer</AssemblyName>
+    <RootNamespace>CareerCloud.EntityFrameworkDataAccess</RootNamespace>
+    <AssemblyName>CareerCloud.EntityFrameworkDataAccess</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -38,7 +38,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,37 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicantEducationRepository.cs" />
-    <Compile Include="ApplicantJobApplicationRepository.cs" />
-    <Compile Include="ApplicantProfileRepository.cs" />
-    <Compile Include="ApplicantResumeRepository.cs" />
-    <Compile Include="ApplicantSkillRepository.cs" />
-    <Compile Include="ApplicantWorkHistoryRepository.cs" />
-    <Compile Include="BaseADO.cs" />
-    <Compile Include="CompanyDescriptionRepository.cs" />
-    <Compile Include="CompanyJobDescriptionRepository.cs" />
-    <Compile Include="CompanyJobEducationRepository.cs" />
-    <Compile Include="CompanyJobRepository.cs" />
-    <Compile Include="CompanyJobSkillRepository.cs" />
-    <Compile Include="CompanyLocationRepository.cs" />
-    <Compile Include="CompanyProfileRepository.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SecurityLoginRepository.cs" />
-    <Compile Include="SecurityLoginsLogRepository.cs" />
-    <Compile Include="SecurityLoginsRoleRepository.cs" />
-    <Compile Include="SecurityRoleRepository.cs" />
-    <Compile Include="SystemCountryCodeRepository.cs" />
-    <Compile Include="SystemLanguageCodeRepository.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CareerCloud.DataAccessLayer\CareerCloud.DataAccessLayer.csproj">
-      <Project>{366ac8ac-2442-4ab9-b736-f63bde3a9cd1}</Project>
-      <Name>CareerCloud.DataAccessLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CareerCloud.Pocos\CareerCloud.Pocos.csproj">
-      <Project>{1bb50585-4a8b-45ad-82ad-6917ee540a97}</Project>
-      <Name>CareerCloud.Pocos</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
