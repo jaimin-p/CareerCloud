@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,10 +10,121 @@ using CareerCloud.Pocos;
 
 namespace CareerCloud.EntityFrameworkDataAccess
 {
-      
-
     public class CareerCloudContext : DbContext
     {
+        public CareerCloudContext() : base(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString)
+         {
+            this.Database.Log = t => Debug.WriteLine(t);
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            #region SystemCountryCodes
+            modelBuilder.Entity<SystemCountryCodePoco>()
+                        .HasMany(e => e.ApplicantProfiles)
+                        .WithRequired(e => e.SystemCountryCodes)
+                        .HasForeignKey(e => e.Country);
+
+            modelBuilder.Entity<SystemCountryCodePoco>()
+                        .HasMany(e => e.ApplicantWorkHistory)
+                        .WithRequired(e => e.SystemCountryCodes)
+                        .HasForeignKey(e => e.CountryCode);
+            #endregion
+
+            #region CompanyProfiles
+            modelBuilder.Entity<CompanyProfilePoco>()
+                        .HasMany(e => e.CompanyDescriptions)
+                        .WithRequired(e => e.CompanyProfiles)
+                        .HasForeignKey(e => e.Company);
+
+            modelBuilder.Entity<CompanyProfilePoco>()
+                        .HasMany(e => e.CompanyJobs)
+                        .WithRequired(e => e.CompanyProfiles)
+                        .HasForeignKey(e => e.Company);
+
+            modelBuilder.Entity<CompanyProfilePoco>()
+                        .HasMany(e => e.CompanyLocations)
+                        .WithRequired(e => e.CompanyProfiles)
+                        .HasForeignKey(e => e.Company);
+            #endregion
+
+            #region CompanyJobs
+            modelBuilder.Entity<CompanyJobPoco>()
+                        .HasMany(e => e.ApplicantJobApplications)
+                        .WithRequired(e => e.CompanyJobs)
+                        .HasForeignKey(e => e.Job);
+
+            modelBuilder.Entity<CompanyJobPoco>()
+                        .HasMany(e => e.CompanyJobEducation)
+                        .WithRequired(e => e.CompanyJobs)
+                        .HasForeignKey(e => e.Job);
+
+            modelBuilder.Entity<CompanyJobPoco>()
+                        .HasMany(e => e.CompanyJobSkills)
+                        .WithRequired(e => e.CompanyJobs)
+                        .HasForeignKey(e => e.Job);
+
+            modelBuilder.Entity<CompanyJobPoco>()
+                        .HasMany(e => e.CompanyJobDescriptions)
+                        .WithRequired(e => e.CompanyJobs)
+                        .HasForeignKey(e => e.Job);
+            #endregion
+
+            #region SecurityRoles
+            modelBuilder.Entity<SecurityRolePoco>()
+                        .HasMany(e => e.SecurityLoginsRoles)
+                        .WithRequired(e => e.SecurityRoles)
+                        .HasForeignKey(e => e.Role);
+            #endregion
+
+            #region SecurityLogins
+            modelBuilder.Entity<SecurityLoginPoco>()
+                        .HasMany(e => e.ApplicantProfiles)
+                        .WithRequired(e => e.SecurityLogins)
+                        .HasForeignKey(e => e.Login);
+
+            modelBuilder.Entity<SecurityLoginPoco>()
+                        .HasMany(e => e.SecurityLoginsLogs)
+                        .WithRequired(e => e.SecurityLogins)
+                        .HasForeignKey(e => e.Login);
+
+            modelBuilder.Entity<SecurityLoginPoco>()
+                        .HasMany(e => e.SecurityLoginsRoles)
+                        .WithRequired(e => e.SecurityLogins)
+                        .HasForeignKey(e => e.Login);
+            #endregion
+
+            #region ApplicantProfiles
+            modelBuilder.Entity<ApplicantProfilePoco>()
+                        .HasMany(e => e.ApplicantEducation)
+                        .WithRequired(e => e.ApplicantProfiles)
+                        .HasForeignKey(e => e.Applicant);
+
+            modelBuilder.Entity<ApplicantProfilePoco>()
+                        .HasMany(e => e.ApplicantJobApplications)
+                        .WithRequired(e => e.ApplicantProfiles)
+                        .HasForeignKey(e => e.Applicant);
+
+            modelBuilder.Entity<ApplicantProfilePoco>()
+                        .HasMany(e => e.ApplicantSkills)
+                        .WithRequired(e => e.ApplicantProfiles)
+                        .HasForeignKey(e => e.Applicant);
+
+            modelBuilder.Entity<ApplicantProfilePoco>()
+                        .HasMany(e => e.ApplicantWorkHistory)
+                        .WithRequired(e => e.ApplicantProfiles)
+                        .HasForeignKey(e => e.Applicant);
+
+            modelBuilder.Entity<ApplicantProfilePoco>()
+                        .HasMany(e => e.ApplicantResumes)
+                        .WithRequired(e => e.ApplicantProfiles)
+                        .HasForeignKey(e => e.Applicant);
+            #endregion
+
+        }
+
         public DbSet<ApplicantEducationPoco> ApplicantEducation { get; set; }
         public DbSet<ApplicantJobApplicationPoco> ApplicantJobApplication { get; set; }
         public DbSet<ApplicantProfilePoco> ApplicantProfile { get; set; }
