@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.Entity;
 using System.Diagnostics;
 using System.Linq;
@@ -12,10 +13,14 @@ namespace CareerCloud.EntityFrameworkDataAccess
 {
     public class CareerCloudContext : DbContext
     {
-        public CareerCloudContext(bool createProxy = true) : base(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString)
-         {
+        public CareerCloudContext() : this(false)
+        {
+
+        }
+        public CareerCloudContext(bool createProxy=true) : base(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString)
+         { 
             this.Database.Log = t => Debug.WriteLine(t);
-            Configuration.ProxyCreationEnabled = createProxy;
+           Configuration.ProxyCreationEnabled = createProxy;
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
