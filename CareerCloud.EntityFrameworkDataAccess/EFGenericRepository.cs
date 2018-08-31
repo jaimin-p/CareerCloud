@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using CareerCloud.DataAccessLayer;
 
 
+
 namespace CareerCloud.EntityFrameworkDataAccess
 {
     public class EFGenericRepository<T> : IDataRepository<T>

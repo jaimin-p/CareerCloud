@@ -57,6 +57,24 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CareerCloud.BusinessLogicLayer\CareerCloud.BusinessLogicLayer.csproj">
+      <Project>{65ffa330-db11-4a4f-b9e6-4af519950cfe}</Project>
+      <Name>CareerCloud.BusinessLogicLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CareerCloud.DataAccessLayer\CareerCloud.DataAccessLayer.csproj">
+      <Project>{366AC8AC-2442-4AB9-B736-F63BDE3A9CD1}</Project>
+      <Name>CareerCloud.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CareerCloud.EntityFrameworkDataAccess\CareerCloud.EntityFrameworkDataAccess.csproj">
+      <Project>{3c0eb4f1-0359-4ac9-9b88-6337e4f8f2b7}</Project>
+      <Name>CareerCloud.EntityFrameworkDataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CareerCloud.Pocos\CareerCloud.Pocos.csproj">
+      <Project>{1bb50585-4a8b-45ad-82ad-6917ee540a97}</Project>
+      <Name>CareerCloud.Pocos</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <VSToolsPath Condition="'$(VSToolsPath)' == '' and '$(VisualStudioVersion)' != '' and '$(VisualStudioVersion)' != '11.0'">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
