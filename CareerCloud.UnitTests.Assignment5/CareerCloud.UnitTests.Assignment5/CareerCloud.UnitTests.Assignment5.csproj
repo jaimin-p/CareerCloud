@@ -156,10 +156,6 @@
       <Project>{65ffa330-db11-4a4f-b9e6-4af519950cfe}</Project>
       <Name>CareerCloud.BusinessLogicLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\CareerCloud.DataAccessLayer\CareerCloud.DataAccessLayer.csproj">
-      <Project>{366ac8ac-2442-4ab9-b736-f63bde3a9cd1}</Project>
-      <Name>CareerCloud.DataAccessLayer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\CareerCloud.EntityFrameworkDataAccess\CareerCloud.EntityFrameworkDataAccess.csproj">
       <Project>{3c0eb4f1-0359-4ac9-9b88-6337e4f8f2b7}</Project>
       <Name>CareerCloud.EntityFrameworkDataAccess</Name>
