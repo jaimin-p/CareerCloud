@@ -6,7 +6,8 @@ Online Job Portal Where Employers can Post Jobs and Job Seekers can apply for Jo
 #### Core Technologies : C#.NET , T-SQL , ASP.NET MVC , RESTful Services 
 
 ## Demo
-![cc1](https://drive.google.com/file/d/150x1izOL9poGIug-JRyv66YBetfdWwUJ/view)
+[![Demo CountPages alpha]](https://drive.google.com/file/d/150x1izOL9poGIug-JRyv66YBetfdWwUJ/view))
+
 
 ##  Project Architecture
 ![cc1](https://user-images.githubusercontent.com/37629359/45276537-f7c56800-b490-11e8-8c30-3a836c0cb7f2.png)
